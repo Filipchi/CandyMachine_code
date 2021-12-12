@@ -87,7 +87,7 @@ public class MaquinaDulces {
 		}
 		return 0.0;
 	}
-	
+
 	public Celda buscarCeldaProducto(String codigoProducto) {
 		Celda celdaX = null;
 		for (int i = 0; i < celdas.size(); i++) {
@@ -99,8 +99,7 @@ public class MaquinaDulces {
 			}
 		}
 		return null;
-	}
-	
+	}	
 	public void incrementarProductos(String codigoProducto, int items) {
 		Celda celdaEncontrada = buscarCeldaProducto(codigoProducto);
 		int stockActual = celdaEncontrada.getStock();
@@ -110,6 +109,7 @@ public class MaquinaDulces {
 	
 	public void vender(String codigoCelda) {
 		Celda celdaX = null;
+		System.out.println("***************  Venta Producto en Celda "+codigoCelda+"  ***************");
 		for (int i = 0; i < celdas.size(); i++) {
 			celdaX = celdas.get(i);
 			if (celdaX.getCodigo().equals(codigoCelda)) {
@@ -122,6 +122,8 @@ public class MaquinaDulces {
 
 	public double venderConCambio(String codigoCelda, double valorCliente) {
 		Celda celdaX = null;
+		System.out.println("***************  Venta Producto en Celda "
+									+codigoCelda+"  ***************");
 		for (int i = 0; i < celdas.size(); i++) {
 			celdaX = celdas.get(i);
 			if (celdaX.getCodigo().equals(codigoCelda)) {

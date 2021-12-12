@@ -4,7 +4,6 @@ import componentes.Producto;
 import maquina.MaquinaDulces;
 
 public class TestVenderConCambio {
-
     public static void main(String[] args) {
 
         MaquinaDulces maquina = new MaquinaDulces();
@@ -17,10 +16,12 @@ public class TestVenderConCambio {
         maquina.cargarProducto(new Producto("MH6S", "Yogurt", 1.53), "B", 8);
         maquina.cargarProducto(new Producto("BDCR", "Gatorade", 2.54), "D", 5);
 
-        System.out.println("***************  Venta Producto en Celda D  ***************");
-
 		double cambio=maquina.venderConCambio("D", 10);
-		maquina.mostrarProductos();
-		System.out.println("\nSU CAMBIO ES: "+cambio);
+        if (cambio != 0.0) {
+            maquina.mostrarProductos();
+            System.out.println("SU CAMBIO ES: "+cambio);
+        } else {
+            System.out.println("Celda No encontrada");
+        }
     }
 }

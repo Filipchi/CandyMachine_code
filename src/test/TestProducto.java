@@ -16,8 +16,6 @@ public class TestProducto {
 		System.out.println("Precio incrementado: "+producto.getPrecio());
 		
 		producto.disminuirPrecio(0.35);
-		System.out.println("Precio incrementado: "+producto.getPrecio());
-		
-		
+		System.out.println("Precio incrementado: "+producto.getPrecio());	
 	}
 }
