@@ -10,12 +10,12 @@ public class TestContenidoCelda {
 		Producto producto=new Producto("KE34","Papitas",0.85);
 		celda.ingresarProducto(producto, 5);
 		
-		System.out.println("CELDA:"+celda.getCodigo());
+		System.out.println("CELDA: "+celda.getCodigo());
 		System.out.println("*************************************");
-		System.out.println("Nombre Producto:"+celda.getProducto().getNombre());
-		System.out.println("Precio Producto:"+celda.getProducto().getPrecio());
-		System.out.println("C�digo Producto:"+celda.getProducto().getCodigo());
-		System.out.println("STOCK:"+celda.getStock());
+		System.out.println("Nombre Producto: "+celda.getProducto().getNombre());
+		System.out.println("Precio Producto: "+celda.getProducto().getPrecio());
+		System.out.println("Código Producto: "+celda.getProducto().getCodigo());
+		System.out.println("STOCK: "+celda.getStock());
 	}
 
 }

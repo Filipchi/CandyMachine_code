@@ -8,8 +8,7 @@ import componentes.Producto;
 public class MaquinaDulces {
 	private ArrayList<Celda> celdas;
 	private double Saldo;
-	
-	
+		
 	
 	public MaquinaDulces() {
 		celdas = new ArrayList<Celda>();
@@ -64,6 +63,7 @@ public class MaquinaDulces {
 				System.out.println("Sin Producto asignado");
 			}
 		}
+		System.out.println("Saldo: "+this.Saldo+"\n");
 	}
 	
 	public Producto buscarProductoEnCelda(String codigoCelda) {
@@ -119,6 +119,19 @@ public class MaquinaDulces {
 			}
 		}
 	}
+
+	public double venderConCambio(String codigoCelda, double valorCliente) {
+		Celda celdaX = null;
+		for (int i = 0; i < celdas.size(); i++) {
+			celdaX = celdas.get(i);
+			if (celdaX.getCodigo().equals(codigoCelda)) {
+				celdaX.setStock(celdaX.getStock()-1);
+				this.Saldo += celdaX.getProducto().getPrecio();
+				return valorCliente - celdaX.getProducto().getPrecio();
+			}
+		}
+		return 0.0;
+	}
 	
 
 	public ArrayList<Celda> getCeldas() {
@@ -135,7 +148,5 @@ public class MaquinaDulces {
 
 	public void setSaldo(double saldo) {
 		Saldo = saldo;
-	}
-	
-	
+	}	
 }
